@@ -1,0 +1,44 @@
+:root {
+    --width-px: 100px;
+    --width-percent: 100%;
+    --width-vh: 100vh;
+    --px-2: 2px;
+    --px-8: 8px;
+    --px-16: 16px;
+    --px-18: 18px;
+    --px-21: 21px;
+    --px-24: 24px;
+    --px-32: 32px;
+    --px-64: 64px;
+
+    --color-red: #e50004;
+    --color-light-red: #ED1C25;
+    --color-dark-red: #E50004;
+    --color-white: #fff;
+    --color-green: #7fbd6c;
+    --color-light-green: #77E500;
+    --color-dark-green: #00E535;
+    --color-light-gray: #ececec;
+    --color-black: #000;
+    --color-orango: #FFB119;
+    
+    --font-style: 'Segoe UI', sans-serif;
+    --font-w-100: 100;
+    --font-w-200: 200;
+    --font-w-300: 300;
+    --font-w-400: 400;
+    --font-w-500: 500;
+    --font-w-600: 600;
+    --font-w-700: 700;
+    --font-w-800: 800;
+    --font-w-900: 900;
+    
+    --input-medium: calc(var( --width-px) - 84px);
+    --input-border-rad: calc(var( --width-px) - 75px);
+    --input-sec: .2s;
+    --input-rbg: rgba(0, 0, 0, .2);
+    --input-shadow: 0 calc(var( --width-px) - 98px) calc(var( --width-px) - 95px) var(--input-rbg);
+    --input-shadow__check-block: 0 calc(var( --width-px) - 96px) calc(var( --width-px) - 86px) var(--input-rbg);
+
+    --buttom-transition: transform 0.2s;
+}

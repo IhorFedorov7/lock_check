@@ -1,0 +1,12 @@
+# Игнорировать папку node_modules.
+node_modules/
+# Игнорировать папку dist.
+dist/*
+# Кроме файла -min.js папку dist.
+!dist/*-min.js
+# Игнорировать файл донор
+донор.txt
+# Игнорировать папку .parcel-cache
+.parcel-cache
+# Игнорировать файл package-lock
+package-lock.json

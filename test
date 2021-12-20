@@ -1,0 +1,10 @@
+//"build_babel": "babel src/js/ -d es2015 --presets es2015",
+
+# Игнорировать папку es2015
+es2015/
+# Игнорировать папку minjs
+minjs/
+
+window.mozPerformance || window.msPerformance || window.webkitPerformance ||
+
+
