@@ -423,6 +423,10 @@ div.banner_dynamic>div {
     height: 100%;
 }
 
+.hidden {
+    display: none;
+}
+
 @media (max-width: 1820px) {
     .scroll .check-block__info-text > p {
         font-size: var(--px-16);
@@ -595,7 +599,7 @@ div.banner_dynamic>div {
     }
 
     .check-block__background.shift.anim.scroll.up {
-        transform: translateY(calc(var(--width-px) * (2)));
+        transform: translateY(calc(var(--width-px) * 2));
         transition: var(--input-sec);
     }
 

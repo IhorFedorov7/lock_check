@@ -54,7 +54,7 @@ const addingBlock = (obj) => {
                 act.forEach(acts => {
 
                     templateRight += `
-                        <div class="content-block__examination-info">
+                        <div class="content-block__examination-info ${ classType == 'banner_detect' ? classType : '' }">
                             <div class="checkbox">
                                 <div class="adLock__check check__activity ${ classType == undefined ? '' : classType }">
                                 </div>

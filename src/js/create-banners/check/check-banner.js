@@ -25,7 +25,6 @@ const checkBlock = ( option ) => {
                     (() => { 
                         document.querySelectorAll(navEl)[`${index}`].classList.add('activ');
                         document.querySelectorAll(checkEl)[`${index}`].classList.add('activ');
-                    
                     })();
                 }
             break;
@@ -54,7 +53,7 @@ const checkBlock = ( option ) => {
             check = document.querySelector(el);
         } else {
     
-            check = document.querySelector('[class*="banner"]');
+            check = document.querySelector('[class*="ads banner"]:not([class*="content-block__examination-info"])');
         };
         
         if ( check === null ) {
@@ -67,10 +66,10 @@ const checkBlock = ( option ) => {
                 check.clientHeight !== 0
             ) {   
                         
-                fl();
+                return fl();
             } else {
 
-                tr();
+                return tr();
             }
         };
     };
@@ -86,6 +85,28 @@ const checkBlock = ( option ) => {
         } else {
 
             if2();
+        }
+    };
+
+    const toggleClass = ( elCheck, classCheck ) => {
+        const el = document.querySelectorAll(elCheck);
+        
+        if ( el.length === 6 ) {
+            
+            el.forEach( (i, index) => {
+                
+                if ( 
+                    index !== 0 &&
+                    index !== 3
+                ) {
+                    if ( !i.parentElement.classList.contains(classCheck) ) {
+                        
+                        i.parentElement.classList.add(classCheck);
+                    } 
+                } 
+            });
+        } else {
+            el.forEach(i => i.parentElement.classList.remove(classCheck));
         }
     };
 
@@ -106,43 +127,50 @@ const checkBlock = ( option ) => {
         },
     });
 
-    if ( checkDetect ) {
-        
-        let checkDtMd = document.querySelector(checkDetect);
+    checkElements({
+        true: () => {
+            toggleClass('[class*="activity banner_detect"]:not(.activ)', 'hidden');
 
-        if ( checkDtMd ) {
+            if ( checkDetect ) {
+                let checkDtMd = document.querySelector(checkDetect);
 
-            checks({booleon:'false', index: 1});
-        } else {
+                if ( checkDtMd ) {
 
-            checks({booleon:'true', index: 1});
-        }
-    };
+                    checks({booleon:'false', index: 1});
+                } else {
 
-    if ( checkVisibility ) {
-        
-        let count = 0;
-        let checkVisEl = document.querySelectorAll(checkVisibility);
+                    checks({booleon:'true', index: 1});
+                }
+            }
 
-        if ( checkVisEl ) {
+            if ( checkVisibility ) {
+                let count = 0;
+                let checkVisEl = document.querySelectorAll(checkVisibility);
 
-            checkVisEl.forEach(i => {
+                if ( checkVisEl ) {
 
-                if ( window.getComputedStyle(i).filter !== 'none' ) {
+                    checkVisEl.forEach(i => {
+
+                        if ( window.getComputedStyle(i).filter !== 'none' ) {
+                            
+                            count++
+                        } 
+                    });
+
+                    if ( count === 3 ) {
                     
-                    count++
-                } 
-            });
-
-            if ( count === 3 ) {
+                        checks({booleon:'false', index: 2});
+                    } else {
             
-                checks({booleon:'false', index: 2});
-            } else {
-    
-                checks({booleon:'true', index: 2});
-            };
-        };
-    };
+                        checks({booleon:'true', index: 2});
+                    }
+                }
+            }
+        },
+        false: () => { 
+            return toggleClass('[class*="activity banner_detect"]:not(.activ)', 'hidden'); 
+        }
+    });
 
     if ( types === 'true' ) {
 

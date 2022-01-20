@@ -10,3 +10,7 @@ dist/*
 .parcel-cache
 # Игнорировать файл package-lock
 package-lock.json
+# Игнорировать папку prod.
+prod/*
+# Игнорировать папку test.
+test
